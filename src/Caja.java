@@ -7,5 +7,7 @@ public class Caja {
     public int getId() {
         return id;
     }
-
+    public void run(Cliente cliente){
+        Thread t = new Thread(cliente::quitarcarito);
+    }
 }
