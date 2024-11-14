@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Caja {
     int id;
     public Caja(int id){
@@ -7,7 +9,10 @@ public class Caja {
     public int getId() {
         return id;
     }
-    public void run(Cliente cliente){
-        Thread t = new Thread(cliente::quitarcarito);
+
+    public String run(Cliente next) {
+
+        String resp = "En la caja "+id+" esta "+next.getNombre()+" productos: \n" + next.quitarcarito();
+        return resp ;
     }
 }

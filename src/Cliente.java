@@ -17,15 +17,22 @@ public class Cliente {
         }
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public int carritoSize(){
         return carrito.size();
     }
-    public synchronized void quitarcarito(){
+
+    public synchronized String quitarcarito(){
+        StringBuilder listaProductos = new StringBuilder();
         if(iterator == null){
             iterator = carrito.iterator();
         }
         while(iterator.hasNext()) {
-            System.out.println(iterator.next());
+            listaProductos.append(iterator.next()).append("\n");
         }
+        return listaProductos.toString();
     }
 }
